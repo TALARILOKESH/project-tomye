@@ -5,7 +5,7 @@ async function processImage() {
     const formData = new FormData();
     formData.append("image", file);
 
-    const response = await fetch("https://YOUR-BACKEND.onrender.com/detect", {
+    const response = await fetch("https://project-2-13q7.onrender.com", {
         method: "POST",
         body: formData
     });
