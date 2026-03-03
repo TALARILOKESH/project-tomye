@@ -19,7 +19,7 @@ async function processImage() {
 
     try {
         const response = await fetch(
-            "https://project-2-13q7.onrender.com/detect",
+            "https://new-one-0sbx.onrender.com",
             {
                 method: "POST",
                 body: formData
