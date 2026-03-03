@@ -19,7 +19,7 @@ async function processImage() {
 
     try {
         const response = await fetch(
-            "https://new-one-0sbx.onrender.com",
+            "https://new-one-0sbx.onrender.com/detect",  // ✅ FIXED
             {
                 method: "POST",
                 body: formData
@@ -36,7 +36,7 @@ async function processImage() {
             "Quality: " + data.result;
 
     } catch (error) {
-        console.error(error);
+        console.error("Error:", error);
         document.getElementById("result").innerText =
             "Server Error ❌";
     }
