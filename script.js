@@ -7,7 +7,6 @@ async function processImage() {
         return;
     }
 
-    // Show preview
     const preview = document.getElementById("preview");
     preview.src = URL.createObjectURL(file);
     preview.style.display = "block";
@@ -19,25 +18,21 @@ async function processImage() {
 
     try {
         const response = await fetch(
-            "https://new-one-0sbx.onrender.com/detect",  // ✅ FIXED
+            "https://new-one-0sbx.onrender.com/detect",
             {
                 method: "POST",
                 body: formData
             }
         );
 
-        if (!response.ok) {
-            throw new Error("Server returned error");
-        }
+        const blob = await response.blob();
+        const imageUrl = URL.createObjectURL(blob);
 
-        const data = await response.json();
-
-        document.getElementById("result").innerText =
-            "Quality: " + data.result;
+        document.getElementById("preview").src = imageUrl;
+        document.getElementById("result").innerText = "Detection Complete ✅";
 
     } catch (error) {
-        console.error("Error:", error);
-        document.getElementById("result").innerText =
-            "Server Error ❌";
+        console.error(error);
+        document.getElementById("result").innerText = "Server Error ❌";
     }
 }
