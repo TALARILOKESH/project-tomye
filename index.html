@@ -3,25 +3,18 @@
 <head>
     <title>Tomato Quality Detection</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 </head>
 <body>
 
-    <h1>🍅 Tomato Quality Detection System</h1>
+    <h1>🍅 Tomato Sorting System</h1>
 
-    <div class="card">
-        <input type="file" id="imageInput" accept="image/*">
-        <button onclick="processImage()">Analyze Tomato</button>
-    </div>
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="processImage()">Analyze</button>
 
-    <div class="preview-container">
-        <img id="preview">
-    </div>
+    <br><br>
+    <img id="preview" width="300">
 
-    <div class="result">
-        <h2 id="yoloResult"></h2>
-        <h2 id="classificationResult"></h2>
-    </div>
+    <h2 id="result"></h2>
 
     <script src="script.js"></script>
 </body>
