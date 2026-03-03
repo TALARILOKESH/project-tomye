@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AI Frontend Test</title>
+    <title>Tomato Quality Detection</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 </head>
 <body>
 
-    <h1>AI System Working 🚀</h1>
-    <button onclick="showMessage()">Click Me</button>
+    <h1>🍅 Tomato Quality Detection System</h1>
 
-    <h2 id="output"></h2>
+    <div class="card">
+        <input type="file" id="imageInput" accept="image/*">
+        <button onclick="processImage()">Analyze Tomato</button>
+    </div>
+
+    <div class="preview-container">
+        <img id="preview">
+    </div>
+
+    <div class="result">
+        <h2 id="yoloResult"></h2>
+        <h2 id="classificationResult"></h2>
+    </div>
 
     <script src="script.js"></script>
 </body>
