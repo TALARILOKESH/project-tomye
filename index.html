@@ -14,7 +14,7 @@ body{
 
 /* Header */
 .header{
-    padding:40px;
+    padding:30px;
 }
 
 .header h1{
@@ -22,17 +22,36 @@ body{
     font-size:48px;
 }
 
+/* Tomato Images Section */
+
+.tomato-gallery{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:20px;
+}
+
+.tomato-gallery img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
 /* Content Box */
+
 .container{
     width:60%;
-    margin:auto;
+    margin:40px auto;
     background:white;
     padding:40px;
     border-radius:12px;
     box-shadow:0 8px 25px rgba(0,0,0,0.15);
 }
 
-/* Description text */
+/* Description */
+
 .description{
     font-size:18px;
     line-height:1.6;
@@ -40,6 +59,7 @@ body{
 }
 
 /* Button */
+
 .start-btn{
     margin-top:30px;
     padding:15px 35px;
@@ -57,7 +77,7 @@ body{
 }
 
 .footer{
-    margin-top:40px;
+    margin-top:30px;
     color:#555;
     font-size:14px;
 }
@@ -65,28 +85,44 @@ body{
 </style>
 </head>
 
-
 <body>
 
 <div class="header">
     <h1>🍅 Tomato Sorting System</h1>
 </div>
 
+<!-- Tomato Images -->
+
+<div class="tomato-gallery">
+    <img src="t1.jpg">
+    <img src="t2.jpg">
+    <img src="t3.jpg">
+</div>
+
 <div class="container">
 
-<h2>Welcome</h2>
+<h2>AI Powered Tomato Quality Detection</h2>
 
 <p class="description">
-This system uses <b>Artificial Intelligence and Computer Vision</b> to detect and classify
-tomatoes into <b>Good</b> and <b>Bad</b> categories.
+
+This system uses <b>Artificial Intelligence and Computer Vision</b> to automatically
+detect and classify tomatoes into <b>Good</b> and <b>Bad</b> categories.
+
 <br><br>
-The system uses:
-<br>
-• <b>YOLO Object Detection</b> to detect tomatoes  
-<br>
-• <b>EfficientNet Deep Learning Model</b> to classify tomato quality  
+
+The system works using two powerful deep learning models:
+
 <br><br>
-Upload an image and the system will automatically identify and sort tomatoes based on their condition.
+
+<b>YOLO Object Detection</b> – Detects tomatoes in the image  
+<br>
+<b>EfficientNetB0</b> – Classifies tomato quality  
+
+<br><br>
+
+Simply upload an image of tomatoes and the system will detect each tomato
+and determine whether it is healthy or defective.
+
 </p>
 
 <button class="start-btn" onclick="startApp()">Get Started</button>
@@ -94,9 +130,8 @@ Upload an image and the system will automatically identify and sort tomatoes bas
 </div>
 
 <div class="footer">
-Project Demo • Tomato Quality Detection System
+AI Based Tomato Sorting System • Project Demo
 </div>
-
 
 <script>
 
