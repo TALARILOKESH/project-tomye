@@ -34,3 +34,19 @@ button:hover {
 .result {
     margin-top: 20px;
 }
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 30px;
+}
+
+.image-box {
+    text-align: center;
+}
+
+#tomatoCounts {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
