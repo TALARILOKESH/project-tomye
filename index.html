@@ -1,26 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tomato Quality Detection</title>
-    <link rel="stylesheet" href="style.css">
+<title>Tomato Sorting System</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#f6f6f6,#e7f5e9);
+    text-align:center;
+}
+
+/* Header */
+.header{
+    padding:40px;
+}
+
+.header h1{
+    color:#c62828;
+    font-size:48px;
+}
+
+/* Content Box */
+.container{
+    width:60%;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Description text */
+.description{
+    font-size:18px;
+    line-height:1.6;
+    margin-top:20px;
+}
+
+/* Button */
+.start-btn{
+    margin-top:30px;
+    padding:15px 35px;
+    font-size:18px;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.start-btn:hover{
+    background:#1b5e20;
+}
+
+.footer{
+    margin-top:40px;
+    color:#555;
+    font-size:14px;
+}
+
+</style>
 </head>
+
+
 <body>
 
+<div class="header">
     <h1>🍅 Tomato Sorting System</h1>
+</div>
 
-    <input type="file" id="imageInput" accept="image/*">
-    <button onclick="processImage()">Analyze</button>
+<div class="container">
 
-    <br><br>
+<h2>Welcome</h2>
 
-    <!-- Image Preview -->
-    <img id="preview" width="300" style="display:none;">
+<p class="description">
+This system uses <b>Artificial Intelligence and Computer Vision</b> to detect and classify
+tomatoes into <b>Good</b> and <b>Bad</b> categories.
+<br><br>
+The system uses:
+<br>
+• <b>YOLO Object Detection</b> to detect tomatoes  
+<br>
+• <b>EfficientNet Deep Learning Model</b> to classify tomato quality  
+<br><br>
+Upload an image and the system will automatically identify and sort tomatoes based on their condition.
+</p>
 
-    <br><br>
+<button class="start-btn" onclick="startApp()">Get Started</button>
 
-    <!-- Result Output -->
-    <h2 id="result"></h2>
+</div>
 
-    <script src="script.js"></script>
+<div class="footer">
+Project Demo • Tomato Quality Detection System
+</div>
+
+
+<script>
+
+function startApp(){
+    window.location.href = "detect.html";
+}
+
+</script>
+
 </body>
 </html>
