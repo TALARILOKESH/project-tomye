@@ -138,7 +138,7 @@ async function processImage() {
             "Detection Complete ✅";
 
         // 🟢 Show tomato counts on webpage
-        document.getElementById("classificationResult").innerText =
+        document.getElementById("classificationResul").innerText =
             `Good Tomatoes: ${good} | Bad Tomatoes: ${bad}`;
 
     } catch (error) {
