@@ -10,9 +10,22 @@
 <div class="image-container">
 
     <!-- INPUT IMAGE -->
-    <div class="image-box">
-        <h3>Input Image</h3>
-        <img id="preview" width="350" style="display:none; border:1px solid #ccc;">
+    <div class="upload-box">
+
+    <!-- CAMERA OPTION -->
+    <label class="btn">
+        📷 Scan from Camera
+        <input type="file" id="cameraInput" accept="image/*" capture="environment" hidden>
+    </label>
+
+    <!-- GALLERY OPTION -->
+    <label class="btn">
+        🖼 Choose from Gallery
+        <input type="file" id="imageInput" accept="image/*" hidden>
+    </label>
+
+    <button onclick="processImage()">Analyze</button>
+
     </div>
 
     <!-- DETECTED IMAGE -->

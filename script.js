@@ -77,11 +77,13 @@ function compressImage(file, maxSize = 640) {
 // ============================
 async function processImage() {
 
-    const fileInput = document.getElementById("imageInput");
-    const file = fileInput.files[0];
+    const galleryInput = document.getElementById("imageInput");
+    const cameraInput = document.getElementById("cameraInput");
+
+    const file = galleryInput.files[0] || cameraInput.files[0];
 
     if (!file) {
-        alert("Please upload image first");
+        alert("Please upload or scan an image first");
         return;
     }
 
@@ -89,9 +91,7 @@ async function processImage() {
     const MAX_FILE_SIZE = 4 * 1024 * 1024;
 
     if (file.size > MAX_FILE_SIZE) {
-        const proceed = confirm(
-            "⚠️ Large image detected. Continue?"
-        );
+        const proceed = confirm("⚠️ Large image detected. Continue?");
         if (!proceed) return;
     }
 
@@ -123,7 +123,6 @@ async function processImage() {
             throw new Error("Server error");
         }
 
-        // 🔴 Get tomato counts from backend headers
         const good = response.headers.get("X-Good-Tomatoes") || 0;
         const bad = response.headers.get("X-Bad-Tomatoes") || 0;
 
@@ -134,18 +133,15 @@ async function processImage() {
         resultImage.src = imageURL;
         resultImage.style.display = "block";
 
-        document.getElementById("result").innerText =
-            "Detection Complete ✅";
+        document.getElementById("result").innerText = "Detection Complete ✅";
 
-        // 🟢 Show tomato counts on webpage
-        document.getElementById("classificationResul").innerText =
+        document.getElementById("classificationResult").innerText =
             `Good Tomatoes: ${good} | Bad Tomatoes: ${bad}`;
 
     } catch (error) {
 
         console.error(error);
 
-        document.getElementById("result").innerText =
-            "Server Error ❌";
+        document.getElementById("result").innerText = "Server Error ❌";
     }
 }
