@@ -21,7 +21,7 @@ loadModel();
 // ============================
 async function wakeServer() {
     try {
-        await fetch("https://new-one-0sbx.onrender.com/");
+        await fetch("https://loki1406-tomye.hf.space/detect");
         console.log("Server waking up...");
     } catch (err) {
         console.log("Wake attempt failed");
