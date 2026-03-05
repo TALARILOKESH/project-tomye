@@ -7,26 +7,25 @@
 
 <br><br>
 
-<div class="image-container">
+<div class="upload-section">
 
-    <!-- INPUT IMAGE -->
-    <div class="upload-box">
+<h2>Select an image</h2>
 
-    <!-- CAMERA OPTION -->
-    <label class="btn">
-        📷 Scan from Camera
-        <input type="file" id="cameraInput" accept="image/*" capture="environment" hidden>
-    </label>
+<label class="big-btn">
+📷 Scan for image
+<input type="file" id="cameraInput" accept="image/*" capture="environment" hidden>
+</label>
 
-    <!-- GALLERY OPTION -->
-    <label class="btn">
-        🖼 Choose from Gallery
-        <input type="file" id="imageInput" accept="image/*" hidden>
-    </label>
+<label class="big-btn">
+🖼 Choose from gallery
+<input type="file" id="imageInput" accept="image/*" hidden>
+</label>
 
-    <button onclick="processImage()">Analyze</button>
+<br>
 
-    </div>
+<button class="analyze-btn" onclick="processImage()">Analyze</button>
+
+</div>
 
     <!-- DETECTED IMAGE -->
     <div class="image-box">
