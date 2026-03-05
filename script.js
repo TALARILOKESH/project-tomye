@@ -138,12 +138,20 @@ async function processImage() {
 
         const goodHeader = response.headers.get("X-Good-Tomatoes");
         const badHeader = response.headers.get("X-Bad-Tomatoes");
-
+        const noTomatoHeader = response.headers.get("X-No-Tomato");
         const good = goodHeader ? parseInt(goodHeader) : 0;
         const bad = badHeader ? parseInt(badHeader) : 0;
+        const noTomato = noTomatoHeader ? parseInt(noTomatoHeader) : 0;
 
         document.getElementById("classificationResult").innerHTML =
         `Good Tomatoes: ${good} <br> Bad Tomatoes: ${bad}`;
+
+        if (noTomato === 1) {
+            document.getElementById("result").innerText =
+            "No tomatoes detected in the image";
+        } else {
+            document.getElementById("result").innerText = "";
+        }
 
     } catch (error) {
 
