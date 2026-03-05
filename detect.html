@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Tomato Sorting System</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
-<div class="header">
 <h1>🍅 Tomato Sorting System</h1>
-</div>
 
-<div class="tomato">
+<div class="upload-section">
 
-<svg width="200" height="200" viewBox="0 0 200 200">
+<h2>Select an image</h2>
 
-<circle cx="100" cy="110" r="70" fill="#e53935"/>
+<label class="big-btn">
+📷 Scan for image
+<input type="file" id="cameraInput" accept="image/*" capture="environment" hidden>
+</label>
 
-<polygon points="100,30 80,60 120,60" fill="#2e7d32"/>
-<polygon points="70,45 95,60 60,70" fill="#2e7d32"/>
-<polygon points="130,45 105,60 140,70" fill="#2e7d32"/>
+<label class="big-btn">
+🖼 Choose from gallery
+<input type="file" id="imageInput" accept="image/*" hidden>
+</label>
 
-</svg>
-
-</div>
-
-<div class="container">
-
-<h2>AI Powered Tomato Quality Detection</h2>
-
-<button class="start-btn" onclick="startApp()">Get Started</button>
+<button class="analyze-btn" onclick="processImage()">Analyze</button>
 
 </div>
 
-<div class="footer">
-AI Based Tomato Sorting System • Project Demo
+<div class="image-container">
+
+    <!-- INPUT IMAGE -->
+    <div class="image-box">
+        <h3>Input Image</h3>
+        <img id="preview" width="350" style="display:none;">
+    </div>
+
+    <!-- DETECTED IMAGE -->
+    <div class="image-box">
+        <h3>Detected Image</h3>
+        <img id="resultImage" width="350" style="display:none;">
+
+        <div id="classificationResult">
+            Good Tomatoes: 0 <br>
+            Bad Tomatoes: 0
+        </div>
+    </div>
+
 </div>
 
-<script>
+<br>
 
-function startApp(){
-    window.location.href="detect.html";
-}
+<h3 id="result"></h3>
 
-</script>
+<script src="script.js"></script>
 
 </body>
-</html>
