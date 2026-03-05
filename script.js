@@ -147,9 +147,11 @@ async function processImage() {
         `Good Tomatoes: ${good} <br> Bad Tomatoes: ${bad}`;
 
         if (noTomato === 1) {
-            document.getElementById("result").innerText =
-            "No tomatoes";
-        } else {
+            const resultText = document.getElementById("result");
+            resultText.innerText = "No tomatoes detected in the image";
+            resultText.style.color = "#c62828";
+        }
+         else {
             document.getElementById("result").innerText = "";
         }
 
