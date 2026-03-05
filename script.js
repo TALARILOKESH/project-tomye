@@ -77,8 +77,8 @@ function compressImage(file, maxSize = 640) {
 // ============================
 async function processImage() {
 
-    const galleryInput = document.getElementById("imageInput");
-    const cameraInput = document.getElementById("cameraInput");
+    const good = parseInt(response.headers.get("X-Good-Tomatoes") || "0");
+    const bad = parseInt(response.headers.get("X-Bad-Tomatoes") || "0");
 
     const file = galleryInput.files[0] || cameraInput.files[0];
 
