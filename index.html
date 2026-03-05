@@ -27,15 +27,15 @@ body{
 /* LOGO (FLOAT EFFECT) */
 
 .logo{
-    margin-top:60px;
+    margin-top:10px;
+    margin-bottom:-40px;   /* pulls image closer to card */
 }
-
 .logo img{
-    width:500px;
+    width:200px;
     transition:transform 0.3s ease;
+    position:relative;
+    z-index:2;
 }
-
-/* subtle hover effect */
 
 .logo img:hover{
     transform:scale(1.08);
@@ -47,7 +47,7 @@ body{
 
 .container{
     width:60%;
-    margin:20px auto;   /* reduced from 40px */
+    margin:10px auto;   /* reduced spacing */
     background:white;
     padding:45px;
     border-radius:14px;
