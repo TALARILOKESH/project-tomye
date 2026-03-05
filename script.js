@@ -148,7 +148,7 @@ async function processImage() {
 
         if (noTomato === 1) {
             const resultText = document.getElementById("result");
-            resultText.innerText = "No tomatoes detected in the image";
+            resultText.innerText = "No tomatoes detected";
             resultText.style.color = "#c62828";
         }
          else {
