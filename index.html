@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Tomato Sorting System</title>
-
+<div class="info-btn" onclick="openInfo()">i</div>
 <style>
 
 body{
@@ -122,6 +122,57 @@ body{
     font-size:14px;
 }
 
+/* INFO BUTTON */
+
+.info-btn{
+position:absolute;
+top:25px;
+right:30px;
+width:35px;
+height:35px;
+background:#e53935;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* MODAL BACKGROUND */
+
+.info-modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+align-items:center;
+justify-content:center;
+}
+
+/* MODAL CONTENT */
+
+.info-content{
+background:white;
+padding:30px;
+border-radius:10px;
+width:400px;
+text-align:left;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* CLOSE BUTTON */
+
+.close-btn{
+float:right;
+font-size:22px;
+cursor:pointer;
+}
 </style>
 </head>
 
@@ -144,7 +195,30 @@ body{
 <button class="start-btn" onclick="startApp()">Get Started</button>
 
 </div>
+<div id="infoModal" class="info-modal">
 
+<div class="info-content">
+
+<span class="close-btn" onclick="closeInfo()">×</span>
+
+<h2>About This Web Application</h2>
+
+<p><b>Frontend:</b><br>
+HTML, CSS, JavaScript deployed using <b>Vercel</b>.
+</p>
+
+<p><b>Backend:</b><br>
+Flask server deployed on <b>Hugging Face Spaces</b>.
+</p>
+
+<p><b>AI Models Used:</b><br>
+• YOLO (.pt) for tomato detection<br>
+• EfficientNetB0 (.pt) for tomato quality classification
+</p>
+
+</div>
+
+</div>
 <div class="footer">
 AI Based Tomato Sorting System • Project Demo
 </div>
