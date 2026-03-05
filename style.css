@@ -92,7 +92,26 @@ h1{
 .image-box h3{
     margin-bottom:15px;
 }
+.tomato{
+    margin-top:10px;
+    animation: floatTomato 3s ease-in-out infinite;
+}
 
+@keyframes floatTomato{
+
+0%{
+transform: translateY(0px);
+}
+
+50%{
+transform: translateY(-20px);
+}
+
+100%{
+transform: translateY(0px);
+}
+
+}
 /* IMAGE STYLE */
 
 .image-box img{
