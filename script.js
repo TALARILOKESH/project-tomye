@@ -130,8 +130,11 @@ async function processImage() {
 
         document.getElementById("result").innerText = "Detection Complete ✅";
 
-        const good = response.headers.get("X-Good-Tomatoes") || 0;
-        const bad = response.headers.get("X-Bad-Tomatoes") || 0;
+        const goodHeader = response.headers.get("X-Good-Tomatoes");
+        const badHeader = response.headers.get("X-Bad-Tomatoes");
+
+        const good = goodHeader ? parseInt(goodHeader) : 0;
+        const bad = badHeader ? parseInt(badHeader) : 0;
 
         document.getElementById("classificationResult").innerHTML =
         `Good Tomatoes: ${good} <br> Bad Tomatoes: ${bad}`;
