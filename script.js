@@ -148,7 +148,7 @@ async function processImage() {
 
         if (noTomato === 1) {
             document.getElementById("result").innerText =
-            "No tomatoes detected in the image";
+            "No tomatoes";
         } else {
             document.getElementById("result").innerText = "";
         }
