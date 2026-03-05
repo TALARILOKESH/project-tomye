@@ -2,20 +2,17 @@
 
 <h1>🍅 Tomato Sorting System</h1>
 
-<input type="file" id="imageInput" accept="image/*">
-<button onclick="processImage()">Analyze</button>
-
-<br><br>
-
 <div class="upload-section">
 
 <h2>Select an image</h2>
 
+<!-- CAMERA BUTTON -->
 <label class="big-btn">
 📷 Scan for image
 <input type="file" id="cameraInput" accept="image/*" capture="environment" hidden>
 </label>
 
+<!-- GALLERY BUTTON -->
 <label class="big-btn">
 🖼 Choose from gallery
 <input type="file" id="imageInput" accept="image/*" hidden>
@@ -27,12 +24,21 @@
 
 </div>
 
+
+<div class="image-container">
+
+    <!-- INPUT IMAGE -->
+    <div class="image-box">
+        <h3>Input Image</h3>
+        <img id="preview" width="350" style="display:none; border:1px solid #ccc;">
+    </div>
+
     <!-- DETECTED IMAGE -->
     <div class="image-box">
         <h3>Detected Image</h3>
         <img id="resultImage" width="350" style="display:none; border:1px solid #ccc;">
 
-        <div id="tomatoCounts">
+        <div id="classificationResult">
             Good Tomatoes: 0 <br>
             Bad Tomatoes: 0
         </div>
