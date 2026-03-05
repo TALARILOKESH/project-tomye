@@ -1,14 +1,18 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     background:#f0f0f0;
+    margin:0;
 }
 
-/* CENTER TITLE */
+/* TITLE */
+
 h1{
     text-align:center;
+    margin-top:20px;
 }
 
-/* CENTER UPLOAD SECTION */
+/* UPLOAD SECTION */
+
 .upload-section{
     text-align:center;
     margin-top:20px;
@@ -22,16 +26,18 @@ h1{
 /* BIG GREEN BUTTONS */
 
 .big-btn{
-    display:block;          /* this moves the next button to a new line */
-    width:300px;
+    display:block;
+    width:320px;
     margin:15px auto;
-    padding:15px;
-    background:#2f6b4f;
+    padding:18px;
+    background:#276749;          /* deep green */
     color:white;
-    font-size:18px;
+    font-size:20px;
     border-radius:40px;
     text-align:center;
     cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    transition:0.2s;
 }
 
 .big-btn:hover{
@@ -42,22 +48,36 @@ h1{
 
 .analyze-btn{
     margin-top:20px;
-    padding:10px 25px;
-    font-size:16px;
+    padding:12px 30px;
+    font-size:18px;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
 }
+
+.analyze-btn:hover{
+    background:#1b5e20;
+}
+
 /* IMAGE LAYOUT */
+
 .image-container{
     display:flex;
     justify-content:center;
-    gap:80px;
+    gap:100px;
+    margin-top:40px;
 }
 
 /* IMAGE BOX */
+
 .image-box{
     text-align:center;
 }
 
 /* IMAGE STYLE */
+
 img{
     border:1px solid #ccc;
     margin-top:10px;
