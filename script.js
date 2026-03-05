@@ -31,7 +31,13 @@ async function wakeServer() {
 window.onload = function () {
     wakeServer();
 };
+function openInfo(){
+document.getElementById("infoModal").style.display="flex";
+}
 
+function closeInfo(){
+document.getElementById("infoModal").style.display="none";
+}
 
 // ============================
 // Resize Image in Browser
