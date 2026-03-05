@@ -112,7 +112,7 @@ async function processImage() {
     try {
 
         const response = await fetch(
-            "https://new-one-0sbx.onrender.com/detect",
+            "https://loki1406-tomye.hf.space/detect",
             {
                 method: "POST",
                 body: formData
