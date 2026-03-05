@@ -135,8 +135,9 @@ async function processImage() {
 
         document.getElementById("result").innerText = "Detection Complete ✅";
 
-        document.getElementById("classificationResult").innerText =
-            `Good Tomatoes: ${good} | Bad Tomatoes: ${bad}`;
+    
+        document.getElementById("classificationResult").innerHTML =
+        `Good Tomatoes: ${good} <br> Bad Tomatoes: ${bad}`;
 
     } catch (error) {
 
