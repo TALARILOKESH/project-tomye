@@ -16,14 +16,18 @@ left:0;
 top:0;
 width:220px;
 height:100vh;
-background-image:url("https://cdn-icons-png.flaticon.com/512/590/590685.png");
+background-image:url("data:image/svg+xml,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>\
+<circle cx='100' cy='110' r='70' fill='%23e53935'/>\
+<polygon points='100,30 80,60 120,60' fill='%232e7d32'/>\
+<polygon points='70,45 95,60 60,70' fill='%232e7d32'/>\
+<polygon points='130,45 105,60 140,70' fill='%232e7d32'/>\
+</svg>");
 background-size:120px;
 background-repeat:repeat-y;
 background-position:center;
 opacity:0.25;
 }
-
-/* RIGHT TOMATO BACKGROUND */
 
 body::after{
 content:"";
@@ -32,7 +36,13 @@ right:0;
 top:0;
 width:220px;
 height:100vh;
-background-image:url("https://cdn-icons-png.flaticon.com/512/590/590685.png");
+background-image:url("data:image/svg+xml,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>\
+<circle cx='100' cy='110' r='70' fill='%23e53935'/>\
+<polygon points='100,30 80,60 120,60' fill='%232e7d32'/>\
+<polygon points='70,45 95,60 60,70' fill='%232e7d32'/>\
+<polygon points='130,45 105,60 140,70' fill='%232e7d32'/>\
+</svg>");
 background-size:120px;
 background-repeat:repeat-y;
 background-position:center;
