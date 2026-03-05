@@ -26,7 +26,12 @@ h1{
     margin-bottom:25px;
     font-size:26px;
 }
+
+/* RESULT MESSAGE */
+
 #result{
+    text-align:center;
+    margin-top:-10px;   /* pulls message closer to result cards */
     font-size:22px;
     font-weight:600;
     color:#c62828;
@@ -97,6 +102,9 @@ h1{
 .image-box h3{
     margin-bottom:15px;
 }
+
+/* FLOATING TOMATO ANIMATION */
+
 .tomato{
     margin-top:10px;
     animation: floatTomato 3s ease-in-out infinite;
@@ -117,6 +125,7 @@ transform: translateY(0px);
 }
 
 }
+
 /* IMAGE STYLE */
 
 .image-box img{
@@ -130,13 +139,4 @@ transform: translateY(0px);
     margin-top:15px;
     font-size:18px;
     font-weight:500;
-}
-
-/* RESULT MESSAGE */
-
-#result{
-    text-align:center;
-    margin-top:20px;
-    font-size:18px;
-    color:#444;
 }
