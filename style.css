@@ -32,7 +32,7 @@ h1{
 #result{
     text-align:center;
     margin-top:-10px;   /* pulls message closer to result cards */
-    font-size:22px;
+    font-size:28px;
     font-weight:600;
     color:#c62828;
 }
