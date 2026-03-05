@@ -150,6 +150,7 @@ height:100%;
 background:rgba(0,0,0,0.5);
 align-items:center;
 justify-content:center;
+z-index:1000;   /* add this */
 }
 
 .info-content{
@@ -159,6 +160,8 @@ border-radius:10px;
 width:400px;
 text-align:left;
 box-shadow:0 10px 25px rgba(0,0,0,0.3);
+position:relative;
+z-index:1001;   /* add this */
 }
 
 .close-btn{
@@ -209,7 +212,7 @@ HTML, CSS, JavaScript deployed using <b>Vercel</b>.
 Flask server deployed on <b>Hugging Face Spaces</b>.
 </p>
 
-<p><b>AI Models Used:</b><br>
+<p><b>Models Used:</b><br>
 • YOLO (.pt) for tomato detection<br>
 • EfficientNetB0 (.pt) for tomato quality classification
 </p>
