@@ -77,8 +77,8 @@ function compressImage(file, maxSize = 640) {
 // ============================
 async function processImage() {
 
-    const good = parseInt(response.headers.get("X-Good-Tomatoes") || "0");
-    const bad = parseInt(response.headers.get("X-Bad-Tomatoes") || "0");
+    const galleryInput = document.getElementById("imageInput");
+    const cameraInput = document.getElementById("cameraInput");
 
     const file = galleryInput.files[0] || cameraInput.files[0];
 
@@ -87,7 +87,6 @@ async function processImage() {
         return;
     }
 
-    // File size warning
     const MAX_FILE_SIZE = 4 * 1024 * 1024;
 
     if (file.size > MAX_FILE_SIZE) {
@@ -101,7 +100,6 @@ async function processImage() {
 
     document.getElementById("result").innerText = "Compressing image...";
 
-    // Compress to 640px
     const compressedBlob = await compressImage(file, 640);
 
     const formData = new FormData();
@@ -123,7 +121,6 @@ async function processImage() {
             throw new Error("Server error");
         }
 
-
         const blob = await response.blob();
         const imageURL = URL.createObjectURL(blob);
 
@@ -133,7 +130,6 @@ async function processImage() {
 
         document.getElementById("result").innerText = "Detection Complete ✅";
 
-    
         const good = response.headers.get("X-Good-Tomatoes") || 0;
         const bad = response.headers.get("X-Bad-Tomatoes") || 0;
 
