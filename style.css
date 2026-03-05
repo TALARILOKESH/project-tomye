@@ -1,57 +1,97 @@
 body{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg,#f4f7f6,#e8f1ed);
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#c62828;
-    text-align:center;
-    position:relative;
-    overflow-x:hidden;
-}
-
-/* LEFT TOMATO BACKGROUND */
-
-body::before{
-content:"";
-position:fixed;
-left:0;
-top:0;
-width:220px;
-height:100vh;
-background-image:url("https://cdn-icons-png.flaticon.com/512/590/590685.png");
-background-size:120px;
-background-repeat:repeat-y;
-background-position:center;
-opacity:0.25;
-}
-
-/* RIGHT TOMATO BACKGROUND */
-
-body::after{
-content:"";
-position:fixed;
-right:0;
-top:0;
-width:220px;
-height:100vh;
-background-image:url("https://cdn-icons-png.flaticon.com/512/590/590685.png");
-background-size:120px;
-background-repeat:repeat-y;
-background-position:center;
-opacity:0.25;
+    color:#222;
 }
 
 /* HEADER */
 
-.header{
-    padding:30px;
+h1{
+    text-align:center;
+    margin-top:25px;
+    font-size:34px;
+    letter-spacing:1px;
 }
 
-.header h1{
+/* SECTION TITLE */
+
+.upload-section{
+    text-align:center;
+    margin-top:10px;
+}
+
+.upload-section h2{
+    color:#2e6b4f;
+    margin-bottom:25px;
+    font-size:26px;
+}
+
+/* BIG BUTTONS */
+
+.big-btn{
+    display:block;
+    width:320px;
+    margin:18px auto;
+    padding:18px;
+    background:#2f6b4f;
     color:white;
-    font-size:48px;
+    font-size:20px;
+    border-radius:40px;
+    text-align:center;
+    cursor:pointer;
+    box-shadow:0 6px 14px rgba(0,0,0,0.2);
+    transition:all 0.25s ease;
 }
 
-/* FLOATING TOMATO */
+.big-btn:hover{
+    background:#23533d;
+    transform:translateY(-3px);
+}
 
+/* ANALYZE BUTTON */
+
+.analyze-btn{
+    margin-top:18px;
+    padding:12px 32px;
+    font-size:18px;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    transition:all 0.25s ease;
+}
+
+.analyze-btn:hover{
+    background:#1b5e20;
+    transform:translateY(-2px);
+}
+
+/* IMAGE DISPLAY AREA */
+
+.image-container{
+    display:flex;
+    justify-content:center;
+    gap:120px;
+    margin-top:60px;
+    flex-wrap:wrap;
+}
+
+/* IMAGE CARDS */
+
+.image-box{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    text-align:center;
+}
+
+.image-box h3{
+    margin-bottom:15px;
+}
 .tomato{
     margin-top:10px;
     animation: floatTomato 3s ease-in-out infinite;
@@ -72,46 +112,26 @@ transform: translateY(0px);
 }
 
 }
+/* IMAGE STYLE */
 
-/* CENTER CARD */
-
-.container{
-    width:60%;
-    margin:30px auto;
-    background:white;
-    padding:40px;
-    border-radius:12px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.25);
-}
-
-/* DESCRIPTION */
-
-.description{
-    font-size:18px;
-    line-height:1.6;
-}
-
-/* BUTTON */
-
-.start-btn{
-    margin-top:30px;
-    padding:15px 35px;
-    font-size:18px;
-    background:#2e7d32;
-    color:white;
-    border:none;
+.image-box img{
     border-radius:8px;
-    cursor:pointer;
+    max-width:350px;
 }
 
-.start-btn:hover{
-    background:#1b5e20;
+/* COUNT DISPLAY */
+
+#classificationResult{
+    margin-top:15px;
+    font-size:18px;
+    font-weight:500;
 }
 
-/* FOOTER */
+/* RESULT MESSAGE */
 
-.footer{
-    margin-top:30px;
-    color:white;
-    font-size:14px;
+#result{
+    text-align:center;
+    margin-top:20px;
+    font-size:18px;
+    color:#444;
 }
