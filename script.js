@@ -123,8 +123,6 @@ async function processImage() {
             throw new Error("Server error");
         }
 
-        const good = response.headers.get("X-Good-Tomatoes") || 0;
-        const bad = response.headers.get("X-Bad-Tomatoes") || 0;
 
         const blob = await response.blob();
         const imageURL = URL.createObjectURL(blob);
@@ -136,6 +134,9 @@ async function processImage() {
         document.getElementById("result").innerText = "Detection Complete ✅";
 
     
+        const good = response.headers.get("X-Good-Tomatoes") || 0;
+        const bad = response.headers.get("X-Bad-Tomatoes") || 0;
+
         document.getElementById("classificationResult").innerHTML =
         `Good Tomatoes: ${good} <br> Bad Tomatoes: ${bad}`;
 
