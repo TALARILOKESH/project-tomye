@@ -28,22 +28,22 @@
 
 <div class="image-container">
 
-    <!-- INPUT IMAGE -->
-    <div class="image-box">
-        <h3>Input Image</h3>
-        <img id="preview" width="350" style="display:none;">
-    </div>
+<div class="image-box">
+<h3>Input Image</h3>
+<img id="preview" width="350" style="display:none;">
+</div>
 
-    <!-- DETECTED IMAGE -->
-    <div class="image-box">
-        <h3>Detected Image</h3>
-        <img id="resultImage" width="350" style="display:none;">
+<div class="image-box">
+<h3>Detected Image</h3>
 
-        <div id="classificationResult">
-            Good Tomatoes: 0 <br>
-            Bad Tomatoes: 0
-        </div>
-    </div>
+<img id="resultImage" width="350" style="display:none; cursor:pointer;">
+
+<div id="classificationResult">
+Good Tomatoes: 0 <br>
+Bad Tomatoes: 0
+</div>
+
+</div>
 
 </div>
 
@@ -51,6 +51,15 @@
 
 <h3 id="result"></h3>
 
+<!-- EXPLANATION POPUP -->
+
+<div id="explanationBox" class="explain-box" style="display:none;">
+<h3>Tomato Explanation</h3>
+<div id="explanationText"></div>
+<button onclick="closeExplain()">Close</button>
+</div>
+
 <script src="script.js"></script>
 
 </body>
+</html>

@@ -1,4 +1,5 @@
 let model;
+let tomatoData = [];
 
 // ============================
 // Load TensorFlow Model
@@ -31,6 +32,7 @@ async function wakeServer() {
 window.onload = function () {
     wakeServer();
 };
+
 function openInfo(){
 document.getElementById("infoModal").style.display="flex";
 }
@@ -38,6 +40,7 @@ document.getElementById("infoModal").style.display="flex";
 function closeInfo(){
 document.getElementById("infoModal").style.display="none";
 }
+
 
 // ============================
 // Resize Image in Browser
@@ -139,9 +142,15 @@ async function processImage() {
         const goodHeader = response.headers.get("X-Good-Tomatoes");
         const badHeader = response.headers.get("X-Bad-Tomatoes");
         const noTomatoHeader = response.headers.get("X-No-Tomato");
+        const tomatoHeader = response.headers.get("X-Tomato-Data");
+
         const good = goodHeader ? parseInt(goodHeader) : 0;
         const bad = badHeader ? parseInt(badHeader) : 0;
         const noTomato = noTomatoHeader ? parseInt(noTomatoHeader) : 0;
+
+        if (tomatoHeader) {
+            tomatoData = JSON.parse(tomatoHeader);
+        }
 
         document.getElementById("classificationResult").innerHTML =
         `Good Tomatoes: ${good} <br> Bad Tomatoes: ${bad}`;
@@ -155,10 +164,72 @@ async function processImage() {
             document.getElementById("result").innerText = "";
         }
 
+        // ============================
+        // CLICK TO INSPECT TOMATO
+        // ============================
+
+        resultImage.onclick = function(event){
+
+            const rect = resultImage.getBoundingClientRect();
+
+            const scaleX = resultImage.naturalWidth / rect.width;
+            const scaleY = resultImage.naturalHeight / rect.height;
+
+            const clickX = (event.clientX - rect.left) * scaleX;
+            const clickY = (event.clientY - rect.top) * scaleY;
+
+            for(let tomato of tomatoData){
+
+                if(clickX > tomato.x1 && clickX < tomato.x2 &&
+                   clickY > tomato.y1 && clickY < tomato.y2){
+
+                    showExplain(tomato);
+                    return;
+
+                }
+
+            }
+
+        };
+
     } catch (error) {
 
         console.error(error);
 
         document.getElementById("result").innerText = "Server Error ❌";
     }
+}
+
+
+// ============================
+// SHOW EXPLANATION POPUP
+// ============================
+
+function showExplain(tomato){
+
+const box = document.getElementById("explanationBox");
+const text = document.getElementById("explanationText");
+
+let html = `
+<b>Prediction:</b> ${tomato.prediction}<br>
+<b>Confidence:</b> ${tomato.confidence}<br><br>
+<b>Explanation:</b><br>
+`;
+
+for(let e of tomato.explanation){
+html += "• " + e + "<br>";
+}
+
+text.innerHTML = html;
+box.style.display = "block";
+
+}
+
+
+// ============================
+// CLOSE EXPLANATION
+// ============================
+
+function closeExplain(){
+document.getElementById("explanationBox").style.display="none";
 }
